@@ -14,7 +14,8 @@ xmlns:gap="http://phonegap.com/ns/1.0"
 
     <preference name="permissions" value="none"/>
     <preference name="android-build-tool" value="gradle" />
-    <plugin name="cordova-plugin-admobpro" spec="2.31.6" source="npm" />
+    <plugin name="cordova-plugin-admobpro" spec="2.31.6" />
+    <gap:plugin name="cordova-plugin-admobpro" source="npm" />
     
     <preference name="PLAY_SERVICES_VERSION" default="15.0.0"/>
     <framework src=”com.google.android.gms:play-services-auth:$PLAY_SERVICES_VERSION” />
