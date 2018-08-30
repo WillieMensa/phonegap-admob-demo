@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
-  <head>
-    <title>PhoneGap Device Ready Example</title>
-=======
 <head>
 <meta charset="utf-8" />
 <meta name="format-detection" content="telephone=no" />
 <meta name="viewport"
 	content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-<title>Hallo Welt</title>
+<title>Hello World</title>
 <script type="text/javascript" src="cordova.js"></script>
 <style type="text/css">
 body {
@@ -18,49 +14,51 @@ body {
 	margin: 0;
 	padding: 0;
 	overflow: hidden;
-	background-color: green;
+	background-color: gray;
 	color: white;
 }
->>>>>>> e0e4fd52812f96f0e5b47e6a9a73d755f9645af3
 
-    <script type="text/javascript" charset="utf-8" src="phonegap-1.0.0.js"></script>
-    <script type="text/javascript" charset="utf-8">
+div#fullpage {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0px solid red;
+	text-align: center;
+	vertical-align: middle;
+}
 
-    // Call onDeviceReady when PhoneGap is loaded.
-    //
-    // At this point, the document has loaded but phonegap-1.0.0.js has not.
-    // When PhoneGap is loaded and talking with the native device,
-    // it will call the event `deviceready`.
-    // 
-    document.addEventListener("deviceready", onDeviceReady, false);
+button {
+	font-size: 18px;
+}
+</style>
+</head>
+<body onload="onLoad()" onresize="onResize()">
+<script>
 
-<<<<<<< HEAD
-    // PhoneGap is loaded and it is now safe to make calls PhoneGap methods
-    //
-    function onDeviceReady() {
-        // Now safe to use the PhoneGap API
+function onDeviceReady() {
+    document.removeEventListener('deviceready', onDeviceReady, false);
+
+    // Set AdMobAds options:
+    admob.setOptions({
+        publisherId:          "ca-app-pub-3940256099942544/6300978111",  // Required
+        interstitialAdId:     "ca-app-pub-3940256099942544/1657046752"   // Optional
+    });
+}
+
+document.addEventListener("deviceready", onDeviceReady, false);
+
+
+
+	
+	function onLoad() {
+            initApp();
     }
-=======
-    var admobid = {};
-    if( /(android)/i.test(navigator.userAgent) ) {
-		admobid = {
-			banner: 'ca-app-pub-3940256099942544/6300978111',
-			interstitial: 'ca-app-pub-3940256099942544/1657046752'
-		};
-    } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
-		admobid = {
-			banner: 'ca-app-pub-3940256099942544/6300978111',
-			interstitial: 'ca-app-pub-3940256099942544/7563979554'
-		};
-    } else {
-		admobid = {
-			banner: 'ca-app-pub-3940256099942544/6300978111',
-			interstitial: 'ca-app-pub-3940256099942544/1355127956'
-		};
-    }
-        
-    function initApp() {
-	if (! AdMob ) { alert( 'admob plugin not ready' ); return; }
+
+
+	
+	function initApp() {
+	if (! AdMob ) { alert( 'admob plugin no esta listo' ); return; }
 	initAd();
         // display a banner at startup
         createSelectedBanner();
@@ -141,7 +139,7 @@ body {
     }
 </script>
 	<div id="fullpage">
-		<p>Demo para el plugin AdMob</p>
+		<p>Demo para AdMob Plugin</p>
 		Banner<br /> Standard: <select id="adSize">
 			<option value='SMART_BANNER'>SMART_BANNER</option>
 			<option value='BANNER'>BANNER</option>
@@ -179,10 +177,12 @@ body {
 
 		<button onclick="AdMob.hideBanner();">hide banner</button>
 		<hr />
->>>>>>> e0e4fd52812f96f0e5b47e6a9a73d755f9645af3
 
-    </script>
-  </head>
-  <body>
-  </body>
+		<p>Interstitial</p>
+		<input type='checkbox' id='autoshow' checked />auto show when ready<br />
+		<button onclick="prepareInterstitial();">Prepare</button>
+		<button onclick="AdMob.showInterstitial();">Show</button>
+		<div id='sizeinfo'></div>
+	</div>
+</body>
 </html>
