@@ -12,13 +12,12 @@ xmlns:gap="http://phonegap.com/ns/1.0"
     <content src="index.html" />
     <access origin="*" />
 
-	<preference name="phonegap-version" value="cli-6.0.0" />
     <preference name="permissions" value="none"/>
     <preference name="android-build-tool" value="gradle" />
 	<gap:plugin name="phonegap-admob" source="npm"/>
     
     <preference name="PLAY_SERVICES_VERSION" default="15.0.0"/>
-    <framework src="com.google.android.gms:play-services-auth:$PLAY_SERVICES_VERSION" />
+    <framework src=”com.google.android.gms:play-services-auth:$PLAY_SERVICES_VERSION” />
     
     <!-- Customize your app and platform with the preference element. -->
     <preference name="orientation"                value="portrait" />        <!-- all: default means both landscape and portrait are enabled -->
