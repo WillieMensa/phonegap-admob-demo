@@ -1,14 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget 
 id="com.rjfun.admobdemo" 
-version="1.0.30" 
+version="1.0.40" 
 xmlns="http://www.w3.org/ns/widgets"
 xmlns:gap="http://phonegap.com/ns/1.0"
 >
-    <name>JumpRope</name>
+    <name>Salta la cuerda</name>
     
     <description>Demo para AdMob</description>
-    <author email="rjfun.mobile@gmail.com" href="http://rjfun.github.io/">RjFun</author>
+    <author email="ingverger@gmail.com" href="http://www.ingverger.com.ar/">RjFun</author>
     <content src="index.html" />
     <access origin="*" />
 
